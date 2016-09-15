@@ -21,12 +21,12 @@ Within the _FOR_ loop, use `console.log` to:
 
 function printContent(names){
 	for(var i = 0; i<names.length; i++){
-		console.log("Value of i is: ") + [i]);
-		console.log("Value of i is: " ) + [i]);
-		console.log("Value at " + [i] + " is: ")
+		console.log("Value of i is: " + [i]);
+		console.log("Value of i is: "  + [i]);
+		console.log("Value at " + [i] + " is: " + names[i]);
 
 		}
-	}
+
 	return names;
 } 
 printContent(presidents);
@@ -84,8 +84,14 @@ Example result should look like:
 ```javascript
 `[ 'turn' , 'nope' , 'down' , 'nope' , 'for' , 'nope' , 'what' ]`*/
 
+var oppsArray = [ 'turn' , 'nope' , 'down' , 'nope' , 'for' , 'nope' , 'what' ];
+for (var i =0; i<oopsArray.length; i++){
+	if(i%2===1){
+		oopsArray[i] = 'nope';
 
-
+	}
+}
+console.log(oopsArray);
 /*## `Going backwards?!`
 Using a _FOR_ loop, iterate through the Array stored at `oopsArray` **backwards**. `console.log` each value in the Array.
 
@@ -100,8 +106,12 @@ nope
 turn
 ```*/
 
+var backwardsOppsArray = [];
 
-
+for(var i = oopsArray.length - 1; i>=0; i--){
+	backwardsoppsArray.push(oopsArray[i]);
+}
+console.log(backwardsOopsArray);
 
 /*## `isNapTime`
 Declare a variable named `isNapTime`. Set it to `false`
@@ -115,6 +125,21 @@ Declare a function named `nap`. This function takes in a single parameter called
 
 Now, Write a FOR loop that iterates through the `napSchedule` array and runs the function `nap` while passing in the value at the current position of `napSchedule` into the `nap` function.*/
 
+var isNapTime = false;
+var napSchedle = [false, false, true, false, true, true];
+
+function nap(schedule){
+	if(schedule === true){
+		console.log("zzZzZzZz");
+	}else{
+		console.log("Gotta get to work!");
+		isNapTime = true;
+	}
+}
+for(var i = 0; i<napSchedule.length; i++){
+nap(napSchedule[i]);
+}
+
 
 
 
@@ -124,8 +149,16 @@ Declare a function named `copyArray` which takes two arguments: `originArray` an
 
 To get started, below your function declaration, call your function and pass in the two variables, `valuesArray` and `copyOfValuesArray`. After that, use `console.log` to to inspect the values of `valuesArray` and `copyOfValuesArray` to make sure they have the same values (which means your function worked!).*/
 
+var valuesArray = [18, 19, 92, 14, 24, 53];
+var copyOfValuesArray = [];
 
-
+function copyArray(originalArray, destinationArray){
+	for(var i = 0; i<originArray.length; i++){
+		destinationArray.push(originArray[i]);
+	}
+	return destinationArray;
+}
+console.log(copyArray(valuesArray, copyOfValuesArray));
 
 
 /*![final-boss](https://s3.amazonaws.com/uploads.hipchat.com/54891/2015941/zamX8AqbgYw0QJ8/giphy.gif)
